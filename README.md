@@ -6,6 +6,14 @@ System administration page with React + AdminJS, NodeJS and Postgres
 
 [Dev Samurai - Master Class #006](https://www.youtube.com/watch?v=_pLOceLpRjo&list=WL&index=17&t=329s)
 
+Home Page: http://localhost:5000/admin
+pgAdmin: http://localhost:8000/browser/
+
+Commands:
+Run Project: yarn dev
+Execute Migrate: yarn db:migrate
+Execute Undo Migrate: yarn db:undo
+Start Docker: yarn docker:up 
 
 Create model with sequelize
 
