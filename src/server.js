@@ -10,6 +10,8 @@ import UsersResource from "./resources/UsersResource";
 import ProjectsResource from "./resources/ProjectsResource";
 import TasksResource from "./resources/TasksResource";
 
+import User from "./models/user";
+
 import locale from "./locales/index";
 import theme from "./theme";
 
@@ -33,7 +35,20 @@ const adminJS = new AdminJS({
   ...locale,
 });
 
-const router = AdminJSExpress.buildRouter(adminJS);
+// const router = AdminJSExpress.buildRouter(adminJS);
+const router = AdminJSExpress.buildAuthenticatedRouter(adminJS, {
+  authenticate: async (email, password) => {
+    console.log("authenticate");
+    const user = await User.findOne({ where: { email } });
+
+    if (user && (await user.checkPassword(password))) {
+      return user;
+    }
+
+    return false;
+  },
+  cookiePassword: process.env.SECRET,
+});
 
 app.use(adminJS.options.rootPath, router);
 app.listen(5000, () => {
