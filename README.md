@@ -23,6 +23,12 @@ System administration page with React + AdminJS, NodeJS and Postgres
 4. ***Access PgAdmin To Register Database:***
     - pgAdmin: <http://localhost:8000>
 
+5. ***Run Database Migrate Script:***
+
+    ``` javascript
+    yarn db:migrate
+    ```
+
 5. ***Start Project and Go To The Home Page:*** <http://localhost:5000/admin>
 
     ``` javascript

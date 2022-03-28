@@ -1,14 +1,17 @@
 import "dotenv/config";
 import "./database";
+
 import AdminJS from "adminjs";
 import AdminJSExpress from "@adminjs/express";
 import AdminJSSequelize from "@adminjs/sequelize";
 import express from "express";
-import locale from "./locales/index";
 
 import UsersResource from "./resources/UsersResource";
 import ProjectsResource from "./resources/ProjectsResource";
 import TasksResource from "./resources/TasksResource";
+
+import locale from "./locales/index";
+import theme from "./theme";
 
 AdminJS.registerAdapter(AdminJSSequelize);
 
@@ -17,7 +20,16 @@ const app = express();
 const adminJS = new AdminJS({
   databases: [],
   rootPath: "/admin",
+  dashboard: {
+    component: AdminJS.bundle("./components/Dashboard/index"),
+  },
   resources: [UsersResource, ProjectsResource, TasksResource],
+  branding: {
+    companyName: "Task Manager",
+    logo: false,
+    softwareBrothers: true,
+    theme,
+  },
   ...locale,
 });
 
