@@ -1,7 +1,8 @@
 # Complete Admin Page
 
-System administration page with React + AdminJS, NodeJS and Postgres
+#### System administration page with React + AdminJS, NodeJS and Postgres.
 
+![Login Page](/git_files/login_page.png) ![Home Page](/git_files/home_page.png)
 # How To Run
 
 1. ***Install dependencies:***
@@ -23,13 +24,18 @@ System administration page with React + AdminJS, NodeJS and Postgres
 4. ***Access PgAdmin To Register Database:***
     - pgAdmin: <http://localhost:8000>
 
-5. ***Run Database Migrate Script:***
+5. ***Run Database Migrate Scripts:***
 
     ``` javascript
     yarn db:migrate
     ```
+6. ***Run Seeds Scripts To Create Default Users:*** <http://localhost:5000/admin>
 
-5. ***Start Project and Go To The Home Page:*** <http://localhost:5000/admin>
+    ``` javascript
+    npx sequelize-cli db:seed:all
+    ```
+
+7. ***Start Project and Go To The Home Page:*** <http://localhost:5000/admin>
 
     ``` javascript
     yarn dev
