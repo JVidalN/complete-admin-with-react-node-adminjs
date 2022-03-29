@@ -1,13 +1,6 @@
 # Complete Admin Page
 
     System administration page with React + AdminJS, NodeJS and Postgres.
-
-## Demo
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a50d2f1c-0ba6-4873-a19d-45ef02967108/deploy-status)](https://app.netlify.com/sites/jvn-task-manager/deploys)
-
-You can check out the demo at: https://jvn-task-manager.netlify.app
-
 ## Images
 
 ![Login Page](/git_files/login_page.png) ![Home Page](/git_files/home_page.png)
