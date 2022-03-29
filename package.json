@@ -31,6 +31,7 @@
     "sucrase": "^3.20.3"
   },
   "scripts": {
+    "start": "node ./src/index.js",
     "build": "sucrase ./src -d ./dist --transforms jsx,imports ",
     "dev": "nodemon ./src/index.js",
     "db:migrate": "npx sequelize-cli db:migrate",
