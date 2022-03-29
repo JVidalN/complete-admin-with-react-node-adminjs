@@ -1,1 +1,1 @@
-require("../build/register").registerAll();
+require("./server");
