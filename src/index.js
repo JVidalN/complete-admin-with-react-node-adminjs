@@ -1,1 +1,3 @@
-import "./server";
+import run from "./server";
+
+run();

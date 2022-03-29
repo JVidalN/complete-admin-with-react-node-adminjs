@@ -51,10 +51,15 @@ const router = AdminJSExpress.buildAuthenticatedRouter(adminJS, {
 });
 
 app.use(adminJS.options.rootPath, router);
-app.listen(process.env.PORT || 5000, () => {
-  console.log(
-    `AdminJS is under http://${process.env.HOSTNAME || "localhost"}:${
-      process.env.PORT || 5000
-    }/admin`
-  );
-});
+
+const run = async () => {
+  app.listen(process.env.PORT || 5000, () => {
+    console.log(
+      `AdminJS is under http://${process.env.HOSTNAME || "localhost"}:${
+        process.env.PORT || 5000
+      }/admin`
+    );
+  });
+};
+
+export default run;
