@@ -1,1 +1,1 @@
-web: yarn start
+web: yarn docker:up && yarn start
