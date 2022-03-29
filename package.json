@@ -31,8 +31,8 @@
     "sucrase": "^3.20.3"
   },
   "scripts": {
-    "build": "sucrase ./src -d ./build --transforms jsx,imports ",
-    "dev": "nodemon ./src/server.js",
+    "build": "sucrase ./src -d ./dist --transforms jsx,imports ",
+    "dev": "nodemon ./src/index.js",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:undo": "npx sequelize-cli db:migrate:undo",
     "docker:up": "docker-compose -f docker-composer.yml up"
